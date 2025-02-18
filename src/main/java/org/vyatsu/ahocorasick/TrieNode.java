@@ -1,18 +1,25 @@
 package org.vyatsu.ahocorasick;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
+import java.util.HashSet;
 
 public class TrieNode {
-    private HashMap<Character, TrieNode> children = new HashMap<>();
+    private HashMap<Character, TrieNode> child = new HashMap<>();
     private TrieNode suffixLink;
     private TrieNode outputLink;
-    private List<String> patterns = new ArrayList<>();
+    private HashSet<String> patterns = new HashSet<>();
     private boolean isTerminal;
 
-    public HashMap<Character, TrieNode> getChildren() {
-        return children;
+    public void setChild(Character key, TrieNode node) {
+        this.child.put(key, node);
+    }
+
+    public TrieNode getChild(Character key) {
+        return this.child.get(key);
+    }
+
+    public boolean hasChild(Character key) {
+        return this.child.get(key) != null;
     }
     
     public void setSuffixLink(TrieNode suffixLink) {
@@ -20,14 +27,20 @@ public class TrieNode {
     }
     
     public TrieNode getSuffixLink() {
-        return suffixLink;
+        return this.suffixLink;
     }
     
-    public List<String> getPattern() {
-        return patterns;
+    public HashSet<String> getPatterns() {
+        return this.patterns;
     }
     
     public void addPattern(String word) {
-        patterns.add(word);
+        this.patterns.add(word);
+    }
+
+    public void copyPatterns(TrieNode node) {
+        for (String pattern : this.patterns) {
+            this.patterns.add(pattern);
+        }
     }
 }
