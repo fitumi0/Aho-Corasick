@@ -4,43 +4,45 @@ import java.util.HashMap;
 import java.util.HashSet;
 
 public class TrieNode {
-    private HashMap<Character, TrieNode> child = new HashMap<>();
+    private HashMap<Character, TrieNode> children = new HashMap<>();
     private TrieNode suffixLink;
-    private TrieNode outputLink;
-    private HashSet<String> patterns = new HashSet<>();
-    private boolean isTerminal;
+    private HashSet<String> outputs = new HashSet<>();
 
-    public void setChild(Character key, TrieNode node) {
-        this.child.put(key, node);
+    public boolean hasChild(Character key) {
+        return this.children.get(key) != null;
     }
 
     public TrieNode getChild(Character key) {
-        return this.child.get(key);
+        return this.children.get(key);
     }
 
-    public boolean hasChild(Character key) {
-        return this.child.get(key) != null;
+    public void setChild(Character key, TrieNode node) {
+        this.children.put(key, node);
+    }
+
+    public HashMap<Character, TrieNode> getChildren(){
+        return this.children;
     }
     
     public void setSuffixLink(TrieNode suffixLink) {
         this.suffixLink = suffixLink;
     }
     
-    public TrieNode getSuffixLink() {
-        return this.suffixLink;
-    }
+    // public TrieNode getSuffixLink() {
+    //     return this.suffixLink;
+    // }
     
-    public HashSet<String> getPatterns() {
-        return this.patterns;
-    }
+    // public HashSet<String> getOutput() {
+    //     return this.outputs;
+    // }
     
-    public void addPattern(String word) {
-        this.patterns.add(word);
+    public void addOutput(String word) {
+        this.outputs.add(word);
     }
 
-    public void copyPatterns(TrieNode node) {
-        for (String pattern : this.patterns) {
-            this.patterns.add(pattern);
+    public void copyOutputs(TrieNode node) {
+        for (String output : this.outputs) {
+            this.outputs.add(output);
         }
     }
 }

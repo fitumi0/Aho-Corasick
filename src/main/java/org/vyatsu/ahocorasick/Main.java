@@ -13,6 +13,8 @@ public class Main {
         TrieNode root = trie.buildTrie(patterns);
 
         System.out.println(root.getChild('H'));
+
+        AhoCorasick ac = new AhoCorasick(root);
     }
 }
 
