@@ -11,6 +11,6 @@ public class Pair {
 
     @Override
     public String toString() {
-        return index + " : " + value;
+        return index + ": " + value;
     }
 }
