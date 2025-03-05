@@ -28,13 +28,13 @@ public class TrieNode {
         this.suffixLink = suffixLink;
     }
     
-    // public TrieNode getSuffixLink() {
-    //     return this.suffixLink;
-    // }
+    public TrieNode getSuffixLink() {
+        return this.suffixLink;
+    }
     
-    // public HashSet<String> getOutput() {
-    //     return this.outputs;
-    // }
+    public HashSet<String> getOutputs() {
+        return this.outputs;
+    }
     
     public void addOutput(String word) {
         this.outputs.add(word);
