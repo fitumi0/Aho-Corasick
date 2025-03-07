@@ -1,4 +1,4 @@
-package org.vyatsu.ahocorasick.utils;
+package org.vyatsu.ahocorasick.structures;
 
 public class Pair {
     int index;

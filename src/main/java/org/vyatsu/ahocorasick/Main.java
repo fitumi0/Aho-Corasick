@@ -3,7 +3,8 @@ package org.vyatsu.ahocorasick;
 import java.util.Arrays;
 import java.util.List;
 
-import org.vyatsu.ahocorasick.utils.Pair;
+import org.vyatsu.ahocorasick.structures.Pair;
+
 
 public class Main {
     public static void main(String[] args) {

@@ -21,7 +21,6 @@ public class Trie {
             current = this.root;
         }
 
-
         return current;
     }
 

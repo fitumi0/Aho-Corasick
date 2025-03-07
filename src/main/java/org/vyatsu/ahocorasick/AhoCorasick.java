@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 
-import org.vyatsu.ahocorasick.utils.Pair;
+import org.vyatsu.ahocorasick.structures.Pair;
 
 /**
  *
