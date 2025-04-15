@@ -15,6 +15,8 @@ public class Main {
         Trie trie = new Trie();
         TrieNode root = trie.buildTrie(patterns);
 
+        Trie.visualizeTrie(root, 0);
+
         AhoCorasick ac = new AhoCorasick(root);
         
         List<Pair> results = ac.search(text);

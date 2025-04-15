@@ -9,6 +9,14 @@ public class Pair {
         this.value = value;
     }
 
+    public int getIndex() {
+        return this.index;
+    }
+
+    public String getValue() {
+        return this.value;
+    }
+
     @Override
     public String toString() {
         return index + ": " + value;

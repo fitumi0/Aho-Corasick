@@ -28,7 +28,6 @@ public class AhoCorasick {
         // The root is suffix link for all root childs
         for (Map.Entry<Character, TrieNode> entry : this.root.getChildren().entrySet()) {
             TrieNode child = entry.getValue();
-            char character = entry.getKey();
     
             child.setSuffixLink(root);
             queue.add(child);
