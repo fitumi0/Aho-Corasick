@@ -49,7 +49,6 @@ public class AhoCorasick {
                 
                 // Follow the suffix links of CURRENT element, NOT CHILD and find with the same character child 
                 // ps: dumbass (me) couldn't figure out how to follow a suffix link from a CHILD node (it's empty)
-                // 
                 while(!suffixLink.hasChild(key) && suffixLink != this.root) {
                     suffixLink = suffixLink.getSuffixLink();
                 }
@@ -63,11 +62,15 @@ public class AhoCorasick {
         }
     }
 
-    public List<Pair> search(String text) {
+    public List<Pair> search(String text, boolean ignoreCase) {
         List<Pair> result = new ArrayList<>();
     
         TrieNode current = this.root;
         int i = 0;
+
+        if (ignoreCase) {
+            text = text.toLowerCase();
+        }
     
         while (i < text.length()) {
             char c = text.charAt(i);
