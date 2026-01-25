@@ -3,6 +3,7 @@ package org.vyatsu.ahocorasick;
 import java.util.Arrays;
 import java.util.List;
 
+import org.vyatsu.ahocorasick.strategies.IgnoreCaseSearchStrategy;
 import org.vyatsu.ahocorasick.structures.Pair;
 
 
@@ -10,16 +11,14 @@ public class Main {
     public static void main(String[] args) {
          // Search templates
         List<String> patterns = Arrays.asList("he", "she", "her", "sher");
-        String text = "shersher";
+        String text = "sheRsher";
         
         Trie trie = new Trie();
         TrieNode root = trie.buildTrie(patterns, true);
 
-        Trie.visualizeTrie(root, 0);
-
-        AhoCorasick ac = new AhoCorasick(root);
+        AhoCorasickContext ctx = new AhoCorasickContext(root, new IgnoreCaseSearchStrategy());
+        List<Pair> results = ctx.search(text);
         
-        List<Pair> results = ac.search(text, true);
         
         System.out.println("Search Results:");
 
