@@ -9,7 +9,7 @@ public class TrieNode {
     private HashSet<String> outputs = new HashSet<>();
 
     public boolean hasChild(Character key) {
-        return this.children.get(key) != null;
+        return this.children.containsKey(key);
     }
 
     public TrieNode getChild(Character key) {
